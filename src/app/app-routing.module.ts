@@ -4,6 +4,7 @@ import { RegisterClasesComponent } from './admin/register-clases/register-clases
 import { RegisterClassroomComponent } from './admin/register-classroom/register-classroom.component';
 import { RegisterTutorComponent } from './admin/register-tutor/register-tutor.component';
 import { LoginComponent } from './home/login/login.component';
+import { RegisterStudentComponent } from './home/register-student/register-student.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'registerClassRoom',
     component:RegisterClassroomComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'registerStudent',
+    component:RegisterStudentComponent,
     pathMatch: 'full',
   }
 ];
