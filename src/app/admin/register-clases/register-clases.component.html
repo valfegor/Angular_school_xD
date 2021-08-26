@@ -7,6 +7,7 @@
                 <mat-form-field>
                     <input
                     matInput
+                    [(ngModel)]="registerData.ubication"
                     placeholder="Class Room Ubication"
                     required
                     />
@@ -14,6 +15,7 @@
                 <mat-form-field>
                     <input
                     matInput
+                    [(ngModel)]="registerData.name"
                     placeholder="Course Name"
                     required
                     />
@@ -21,6 +23,7 @@
                 <mat-form-field>
                     <input
                     matInput
+                    [(ngModel)]="registerData.professorname"
                     placeholder="Course Proffesor"
                     required
                     />
@@ -29,6 +32,7 @@
                     <h5>course Start Date</h5>
                     <input
                     matInput
+                    [(ngModel)]="registerData.date"
                     type="Date"
                     required
                     />
@@ -38,6 +42,7 @@
                     <h5>course Start Time</h5>
                     <input
                     matInput
+                    [(ngModel)]="registerData.timeStart"
                     type="time"
                     required
                     />
