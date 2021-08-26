@@ -9,7 +9,7 @@
                     matInput
                     [(ngModel)]="registerData.name"
                     placeholder="Estudent Name And Lastname"
-                    
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -18,6 +18,7 @@
                     [(ngModel)]="registerData.email"
                     placeholder="Estudent Email"
                     type="email"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -25,6 +26,7 @@
                     matInput
                     [(ngModel)]="registerData.adress"
                     placeholder="Estudent Adress"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -32,7 +34,7 @@
                     matInput
                     [(ngModel)]="registerData.parentName"
                     placeholder="Estudent Parent Name"
-                    
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -41,6 +43,7 @@
                     placeholder="Estudent Parent Email"
                     type="email"
                     [(ngModel)]="registerData.parentEmail"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -51,6 +54,7 @@
                     placeholder="(xxx) xxx-xxxx"
                     mask="(000) 000-0000"
                     [(ngModel)]="registerData.estudentPhone"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -61,6 +65,7 @@
                     placeholder="(xxx) xxx-xxxx"
                     mask="(000) 000-0000"
                     [(ngModel)]="registerData.parentPhone"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -69,6 +74,7 @@
                     placeholder="Estudent Password"
                     type="password"
                     [(ngModel)]="registerData.password"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -77,11 +83,20 @@
                     matInput
                     type="Date"
                     [(ngModel)]="registerData.borndate"
+                    required
                     />
 
                 </mat-form-field>
             </div>
         </mat-card-content>
+        <mat-card-actions>
+            <button
+            class="button colorButton"
+            mat-raised-button
+            >
+                Register
+            </button>
+        </mat-card-actions>
         </mat-card>
     </div>
 </div>

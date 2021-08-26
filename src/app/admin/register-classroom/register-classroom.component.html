@@ -9,6 +9,7 @@
                     matInput
                     [(ngModel)]="registerData.ubication"
                     placeholder="Ubication"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -16,6 +17,7 @@
                     matInput
                     placeholder="Classroom Code"
                     [(ngModel)]="registerData.code"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -23,6 +25,7 @@
                     matInput
                     placeholder="Student Capacity"
                     [(ngModel)]="registerData.Capacity"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -30,12 +33,21 @@
                     matInput
                     placeholder="Proffesor Assigned"
                     [(ngModel)]="registerData.professorname"
+                    required
                     />
                 </mat-form-field>
 
              
             </div>
         </mat-card-content>
+        <mat-card-actions>
+            <button
+            class="button colorButton"
+            mat-raised-button
+            >
+                Register
+            </button>
+        </mat-card-actions>
         </mat-card>
     </div>
 </div>

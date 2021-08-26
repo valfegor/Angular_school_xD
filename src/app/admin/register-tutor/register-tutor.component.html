@@ -9,6 +9,7 @@
                     matInput
                     placeholder="Professor Name And LastName"
                     [(ngModel)]="registerData.name"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -19,6 +20,7 @@
                     value=""
                     placeholder="(xxx) xxx-xxxx"
                     mask="(000) 000-0000"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -26,6 +28,7 @@
                     matInput
                     [(ngModel)]="registerData.professoradress"
                     placeholder="Adress"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -33,6 +36,7 @@
                     matInput
                     placeholder="Expertise"
                     [(ngModel)]="registerData.professorexpertise"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -41,6 +45,7 @@
                     placeholder="Professor Email"
                     [(ngModel)]="registerData.email"
                     type="email"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -49,6 +54,7 @@
                     placeholder="Professor Password"
                     [(ngModel)]="registerData.password"
                     type="password"
+                    required
                     />
                 </mat-form-field>
                 <mat-form-field>
@@ -57,12 +63,21 @@
                     matInput
                     type="Date"
                     [(ngModel)]="registerData.born_date"
+                    required
                     />
 
                 </mat-form-field>
              
             </div>
         </mat-card-content>
+        <mat-card-actions>
+            <button
+            class="button colorButton"
+            mat-raised-button
+            >
+                Register
+            </button>
+        </mat-card-actions>
         </mat-card>
     </div>
 </div>
