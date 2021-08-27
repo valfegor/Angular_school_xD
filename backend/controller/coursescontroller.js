@@ -2,7 +2,7 @@ const Courses = require('../models/courses');
 const Classroom = require('../models/classroom');
 
 const registerCourses = async (req, res) => {
-    if(!req.body.name || !req.body.ubication || !req.body.date) return res.status(400).send("Sorry check all the camps please.");
+    if(!req.body.name || !req.body.ubication || !req.body.date || !req.body.code) return res.status(400).send("Sorry check all the camps please.");
 
     let existingName = await Courses.findOne({name: req.body.name});
 
@@ -18,6 +18,7 @@ const registerCourses = async (req, res) => {
         name: req.body.name,
         ubication: ubication.ubication,
         date: req.body.date,
+        code:req.body.code,
         profesor_asigned:ubication.name
     });
 

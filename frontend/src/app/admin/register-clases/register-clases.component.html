@@ -23,8 +23,8 @@
           <mat-form-field>
             <input
               matInput
-              [(ngModel)]="registerData.professorname"
-              placeholder="Course Proffesor"
+              [(ngModel)]="registerData.code"
+              placeholder="Code Of The Course"
               required
             />
           </mat-form-field>
@@ -40,7 +40,7 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button class="button colorButton" mat-raised-button>Register</button>
+        <button (click)="registerCourses()" class="button colorButton" mat-raised-button>Register</button>
       </mat-card-actions>
     </mat-card>
   </div>
