@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "1c0e1ae0-8d7e-44d4-aa2a-70dbb1d810d6",
+		"name": "Angular_School",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Role_Creationb",
+			"item": [
+				{
+					"name": "http://localhost:3001/api/role/registerRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Estudent\",\r\n    \"description\":\"Normal-Student-App\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User_creation",
+			"item": [
+				{
+					"name": "http://localhost:3001/api/estudent/registerEstudent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Anthony Jordan\",\r\n    \"email\":\"locopala99@gmail.com\",\r\n    \"adress\":\"Carrera 7\",\r\n    \"parentName\":\"Geraldine Sanchez\",\r\n    \"parentEmail\":\"Gerito@gmail.com\",\r\n    \"estudentPhone\":\"3000\",\r\n    \"parentPhone\":\"2000\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/estudent/registerEstudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"estudent",
+								"registerEstudent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutor_Creation",
+			"item": [
+				{
+					"name": "http://localhost:3001/api/master/registerTutor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Diego Andres\",\r\n    \"phone\":\"305784\",\r\n    \"adress\":\"calle 12\",\r\n    \"expertise\":\"Natural ciences\",\r\n    \"email\":\"locopala999@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/master/registerTutor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"master",
+								"registerTutor"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Register_classroom",
+			"item": [
+				{
+					"name": "http://localhost:3001/api/classroom/registerClassroom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ubication\":\"bloque 10\",\r\n    \"code\":\"Azss2\",\r\n    \"capacity\":-1,\r\n    \"name\":\"Diego Andres\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/classroom/registerClassroom",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"classroom",
+								"registerClassroom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:3001/api/courses/registerCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"social\",\r\n    \"ubication\":\"Bloque 10\",\r\n    \"date\":\"01-20-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/courses/registerCourse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"courses",
+						"registerCourse"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
