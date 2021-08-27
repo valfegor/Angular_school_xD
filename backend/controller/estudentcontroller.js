@@ -1,0 +1,20 @@
+const Estudent = require('../models/estudent');
+const Role = require('../models/role');
+const bcrypt = require(bcrypt);
+
+const registerEstudent = async (req,res)=>{
+    if(!req.body.name || !req.body.email ||!req.body.adress || !req.body.parentName || !req.body.parentEmail || !req.body.estudentPhone || !req.body.parentPhone || !req.body.password) return res.status(400).send("Sorry check all the camps please");
+
+    const existingUser = await Estudent.findOne({email:req.body.email});
+
+    if(existingUser) return res.status(400).send("Sorry the user already exist");
+
+    const hash = await bcrypt.hash(req.body.password,10);
+
+    let role = await Role.findOne({name:"Estudent"});
+
+    if(!role) return res.status(400).send("Sorry The role dont exist in the data base");
+
+    
+
+}
