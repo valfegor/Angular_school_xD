@@ -15,7 +15,7 @@ const registerEstudent = async (req,res)=>{
 
     if(!role) return res.status(400).send("Sorry The role dont exist in the data base");
 
-    let user = new User({
+    let estudent = new Estudent({
         name: req.body.name,
         password:hash,
         email:req.body.email,
@@ -28,10 +28,18 @@ const registerEstudent = async (req,res)=>{
         dbStatus:true,
     })
 
-    let result = await user.save();
+    let result = await estudent.save();
 
     if(!result) return res.status(400).send("Sorry Cant save please try again");
 
-    
+    try {
+        let jwtToken = user.generateJWT();
+        return res.status(200).send({jwtToken});
+    } catch (e) {
+        return res.status(400).send("Sorry Please try again");
+    }
 
 }
+
+
+module.exports = {registerEstudent}
