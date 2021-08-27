@@ -11,9 +11,11 @@ app.use(cors());
 const Role = require('../backend/routes/roleroutes');
 const Estudent = require('./routes/estudent');
 const Master = require('./routes/master');
+const Classroom = require('./routes/classroom');
 app.use('/api/role',Role);
 app.use('/api/estudent',Estudent);
 app.use('/api/master',Master);
+app.use('/api/classroom',Classroom);
 const{Database_connect} = require('../backend/bd/bd');
 
 
