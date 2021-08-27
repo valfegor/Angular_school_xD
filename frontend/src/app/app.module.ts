@@ -36,6 +36,7 @@ import { MatDatepickerModule} from "@angular/material/datepicker";
 //servicios
 
 import { EstudentService } from "./services/estudent.service";
+import { MasterService } from "./services/master.service";
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { EstudentService } from "./services/estudent.service";
     MatDatepickerModule,
   ],
   providers: [
-    EstudentService
+    EstudentService,
+    MasterService
   ],
   bootstrap: [AppComponent]
 })
