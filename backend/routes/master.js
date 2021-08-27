@@ -6,3 +6,4 @@ const masterController = require('../controller/mastercontroller');
 
 router.post('/registerTutor',masterController.registerMaster);
 
+module.exports = router;

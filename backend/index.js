@@ -10,9 +10,10 @@ app.use(cors());
 
 const Role = require('../backend/routes/roleroutes');
 const Estudent = require('./routes/estudent');
+const Master = require('./routes/master');
 app.use('/api/role',Role);
 app.use('/api/estudent',Estudent);
-
+app.use('/api/master',Master);
 const{Database_connect} = require('../backend/bd/bd');
 
 
