@@ -15,6 +15,10 @@ const registerClassRoom = async (req, res) => {
 
   if (existingCode) return res.status(400).send("Sorry The code already exist");
 
+  existingubication = await Classroom.findOne({ubication: req.body.ubication});
+
+  if(existingubication) return res.status(400).send("Sorry that room its already in use");
+
   const master = await Master.findOne({ name: req.body.name });
 
   if (!master) return res.status(400).send("Sorry the master dont exist");
