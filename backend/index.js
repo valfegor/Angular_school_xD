@@ -7,6 +7,10 @@ app = express();
 
 app.use(express.json());
 
+const Role = require('../backend/routes/roleroutes');
+
+app.use('/api/role',Role);
+
 const{Database_connect} = require('../backend/bd/bd');
 
 
