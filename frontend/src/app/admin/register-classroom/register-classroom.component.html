@@ -1,54 +1,47 @@
 <div class="bgcomponent">
-    <div class="form">
-        <mat-card class="card">
-        <mat-card-title>Register ClassRoom</mat-card-title>
-        <mat-card-content>
-            <div class="container">
-                <mat-form-field>
-                    <input
-                    matInput
-                    [(ngModel)]="registerData.ubication"
-                    placeholder="Ubication"
-                    required
-                    />
-                </mat-form-field>
-                <mat-form-field>
-                    <input
-                    matInput
-                    placeholder="Classroom Code"
-                    [(ngModel)]="registerData.code"
-                    required
-                    />
-                </mat-form-field>
-                <mat-form-field>
-                    <input
-                    matInput
-                    type="number"
-                    placeholder="Student Capacity"
-                    [(ngModel)]="registerData.Capacity"
-                    required
-                    />
-                </mat-form-field>
-                <mat-form-field>
-                    <input
-                    matInput
-                    placeholder="Proffesor Assigned"
-                    [(ngModel)]="registerData.professorname"
-                    required
-                    />
-                </mat-form-field>
-
-             
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <button
-            class="button colorButton"
-            mat-raised-button
-            >
-                Register
-            </button>
-        </mat-card-actions>
-        </mat-card>
-    </div>
+  <div class="form">
+    <mat-card class="card">
+      <mat-card-title>Register ClassRoom</mat-card-title>
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="registerData.ubication"
+              placeholder="Ubication"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Classroom Code"
+              [(ngModel)]="registerData.code"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              type="number"
+              placeholder="Student Capacity"
+              [(ngModel)]="registerData.capacity"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Proffesor Assigned"
+              [(ngModel)]="registerData.name"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="registerClassRoom()"class="button colorButton" mat-raised-button>Register</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

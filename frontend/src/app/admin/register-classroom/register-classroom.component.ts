@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import {ClassroomService  } from "../../services/classroom.service";
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -16,11 +18,15 @@ export class RegisterClassroomComponent implements OnInit {
   public message: string;
   public horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   public VerticalPosition: MatSnackBarVerticalPosition = 'top';
+  public durationInseconds: number;
   constructor(
-    private _snackbar: MatSnackBar
+    private _snackbar: MatSnackBar,
+    private _router: Router,
+    private _classroomservice:ClassroomService
   ) { 
     this.message = '';
     this.registerData = {};
+    this.durationInseconds = 2;
   }
 
   ngOnInit(): void {
