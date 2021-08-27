@@ -9,6 +9,7 @@ const registerClassRoom = async (req, res) => {
     !req.body.name
   )
     return res.status(400).send("Sorry Check all the camps");
+    if(req.body.capacity<0) return res.status(400).send("Sorry You cant put negative values")
 
   existingCode = await Classroom.findOne({ code: req.body.code });
 
@@ -17,6 +18,8 @@ const registerClassRoom = async (req, res) => {
   const master = await Master.findOne({ name: req.body.name });
 
   if (!master) return res.status(400).send("Sorry the master dont exist");
+
+  
 
   const classroom = new Classroom({
     ubication: req.body.ubication,
