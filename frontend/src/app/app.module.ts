@@ -11,7 +11,7 @@ import { RegisterTutorComponent } from './admin/register-tutor/register-tutor.co
 import { RegisterClasesComponent } from './admin/register-clases/register-clases.component';
 import { RegisterClassroomComponent } from './admin/register-classroom/register-classroom.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { PrincipalComponent } from "./home/principal/principal.component";
 
 //imports para los formularios.
 
@@ -40,6 +40,7 @@ import { MasterService } from "./services/master.service";
 import { ClassroomService } from "./services/classroom.service";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ClassroomService } from "./services/classroom.service";
     RegisterStudentComponent,
     RegisterTutorComponent,
     RegisterClasesComponent,
-    RegisterClassroomComponent
+    RegisterClassroomComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
