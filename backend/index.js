@@ -8,7 +8,7 @@ app = express();
 app.use(express.json());
 
 const Role = require('../backend/routes/roleroutes');
-const Estudent = require('../backend/routes/estudentroutes');
+const Estudent = require('./routes/estudent');
 app.use('/api/role',Role);
 app.use('/api/estudent',Estudent);
 
