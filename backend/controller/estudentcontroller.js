@@ -15,6 +15,23 @@ const registerEstudent = async (req,res)=>{
 
     if(!role) return res.status(400).send("Sorry The role dont exist in the data base");
 
+    let user = new User({
+        name: req.body.name,
+        password:hash,
+        email:req.body.email,
+        adress:req.body.adress,
+        parentName: req.body.parentName,
+        parentEmail:req.body.parentEmail,
+        estudentPhone: req.body.estudentPhone,
+        parentPhone:req.body.parentPhone,
+        roleId:role._id,
+        dbStatus:true,
+    })
+
+    let result = await user.save();
+
+    if(!result) return res.status(400).send("Sorry Cant save please try again");
+
     
 
 }
