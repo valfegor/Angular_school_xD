@@ -46,7 +46,9 @@ export class RegisterTutorComponent implements OnInit {
           this.registerData={};
         },
         (err)=>{
-
+          console.log(err);
+          this.message=err.error;
+          this.openSnackBarError();
         }
       )
     }

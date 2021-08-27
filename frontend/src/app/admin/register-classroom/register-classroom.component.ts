@@ -31,4 +31,48 @@ export class RegisterClassroomComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  registerClassRoom(){
+    if (!this.registerData.name || !this.registerData.code || !this.registerData.capacity || !this.registerData.name) {
+      this.message = 'Failed the process the data its incomplete';
+      this.openSnackBarError();
+      this.registerData = {};
+    } else {
+      this._classroomservice.registerClassRoom(this.registerData).subscribe(
+        (res)=>{
+          localStorage.setItem('token',res.jwtToken);
+          this._router.navigate(['/registerClases']);
+          this.message = 'Succesfull Registered',
+          this.openSnackBarSuccesfull();
+          this.registerData={};
+
+        },
+        (err)=>{
+          console.log(err);
+          this.message=err.error;
+          this.openSnackBarError();
+        }
+      )
+    }
+  }
+
+  openSnackBarSuccesfull() {
+    //this.messague = por que ha estado cambiando , {} = CONFIGURACIONES DE LA BARRA , propiedad de la duracion 
+    this._snackbar.open(this.message,'X',{
+      horizontalPosition:this.horizontalPosition,
+      verticalPosition:this.VerticalPosition,
+      duration:this.durationInseconds*1000,
+      panelClass:['style-snackBarTrue']
+    });
+  }
+  
+  openSnackBarError() {
+    this._snackbar.open(this.message,'X',{
+      horizontalPosition:this.horizontalPosition,
+      verticalPosition:this.VerticalPosition,
+      duration:this.durationInseconds*1000,
+      panelClass:['style-snackBarFalse']
+    });
+  }
+
 }
