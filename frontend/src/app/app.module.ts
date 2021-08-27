@@ -33,6 +33,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from "@angular/material/icon";
 import { MatDatepickerModule} from "@angular/material/datepicker";
 
+//servicios
+
+import { EstudentService } from "./services/estudent.service";
+
 
 @NgModule({
   declarations: [
@@ -61,7 +65,9 @@ import { MatDatepickerModule} from "@angular/material/datepicker";
     MatIconModule,
     MatDatepickerModule,
   ],
-  providers: [],
+  providers: [
+    EstudentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

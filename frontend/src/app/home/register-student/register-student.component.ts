@@ -6,7 +6,7 @@ import {
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
-import { ThisReceiver } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-register-student',
@@ -32,7 +32,7 @@ export class RegisterStudentComponent implements OnInit {
   ngOnInit(): void {}
 
   registerEstudent(){
-    if(!this.registerData.name || !this.registerData.email || !this.registerData.adress || !this.registerData.parentName || !this.registerData.parentEmail || !this.registerData.estudentPhone || this.registerData.parentPhone || !this.registerData.password){
+    if(!this.registerData.name || !this.registerData.email || !this.registerData.adress || !this.registerData.parentName || !this.registerData.parentEmail || !this.registerData.estudentPhone || !this.registerData.parentPhone || !this.registerData.password){
       console.log('Failed the process the data its incomplete');
       this.message = 'Failed the process the data its incomplete';
       this.openSnackBarError();
@@ -41,12 +41,41 @@ export class RegisterStudentComponent implements OnInit {
     else{
       this._estudentService.registerEstudent(this.registerData).subscribe(
         (res)=>{
-          
+          localStorage.setItem('token',res.jwtToken);
+          this._router.navigate(['/registerClases']);
+          this.message = 'Succesfull Estudent Registration';
+          this.openSnackBarSuccesfull();
+          this.registerData = {};
         },
         (err)=>{
-
+          console.log(err);
+          this.message=err.error;
+          this.openSnackBarError();
         }
       )
     }
   }
+
+
+  openSnackBarSuccesfull() {
+    //this.messague = por que ha estado cambiando , {} = CONFIGURACIONES DE LA BARRA , propiedad de la duracion 
+    this._snackbar.open(this.message,'X',{
+      horizontalPosition:this.horizontalPosition,
+      verticalPosition:this.VerticalPosition,
+      duration:this.durationInseconds*1000,
+      panelClass:['style-snackBarTrue']
+    });
+  }
+  
+  openSnackBarError() {
+    this._snackbar.open(this.message,'X',{
+      horizontalPosition:this.horizontalPosition,
+      verticalPosition:this.VerticalPosition,
+      duration:this.durationInseconds*1000,
+      panelClass:['style-snackBarFalse']
+    });
+  }
+  
 }
+
+

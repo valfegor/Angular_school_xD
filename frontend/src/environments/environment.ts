@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  //variable de entorno , ruta del backend
   APP_URL : 'http://localhost:3001/api/'
 };
 
