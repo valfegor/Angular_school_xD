@@ -1,6 +1,6 @@
 const Estudent = require('../models/estudent');
 const Role = require('../models/role');
-const bcrypt = require(bcrypt);
+const bcrypt = require('bcrypt');
 
 const registerEstudent = async (req,res)=>{
     if(!req.body.name || !req.body.email ||!req.body.adress || !req.body.parentName || !req.body.parentEmail || !req.body.estudentPhone || !req.body.parentPhone || !req.body.password) return res.status(400).send("Sorry check all the camps please");
@@ -28,16 +28,18 @@ const registerEstudent = async (req,res)=>{
         dbStatus:true,
     })
 
+    console.log(estudent);
+
     let result = await estudent.save();
 
     if(!result) return res.status(400).send("Sorry Cant save please try again");
 
     try {
-        let jwtToken = user.generateJWT();
-        return res.status(200).send({jwtToken});
-    } catch (e) {
-        return res.status(400).send("Sorry Please try again");
-    }
+        let jwtToken = estudent.generateJWT();
+        res.status(200).send({ jwtToken });
+      } catch (e) {
+        return res.status(400).send("Token generation failed");
+      }
 
 }
 

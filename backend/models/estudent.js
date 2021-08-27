@@ -17,18 +17,17 @@ const estudentSchema = new mongoose.Schema({
 });
 
 
-estudentSchema.methods.generateJwt = function(){
-    return jwt.sign({
+estudentSchema.methods.generateJWT = function () {
+    return jwt.sign(
+      {
         _id: this._id,
         name: this.name,
         roleId: this.roleId,
         iat: moment().unix(),
-    },
-    process.env.SECRET_KEY_JWT
-
-    )
-    
-}
+      },
+      process.env.SECRET_KEY_JWT
+    );
+  };
 
 
 
