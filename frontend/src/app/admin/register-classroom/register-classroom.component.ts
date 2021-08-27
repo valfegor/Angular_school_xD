@@ -41,7 +41,7 @@ export class RegisterClassroomComponent implements OnInit {
       this._classroomservice.registerClassRoom(this.registerData).subscribe(
         (res)=>{
           localStorage.setItem('token',res.jwtToken);
-          this._router.navigate(['/registerClases']);
+          this._router.navigate(['/principal']);
           this.message = 'Succesfull Registered',
           this.openSnackBarSuccesfull();
           this.registerData={};

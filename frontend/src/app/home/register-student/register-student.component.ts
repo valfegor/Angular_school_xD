@@ -42,7 +42,7 @@ export class RegisterStudentComponent implements OnInit {
       this._estudentService.registerEstudent(this.registerData).subscribe(
         (res)=>{
           localStorage.setItem('token',res.jwtToken);
-          this._router.navigate(['/registerClases']);
+          this._router.navigate(['/principal']);
           this.message = 'Succesfull Estudent Registration';
           this.openSnackBarSuccesfull();
           this.registerData = {};

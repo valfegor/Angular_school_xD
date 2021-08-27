@@ -43,7 +43,7 @@ export class RegisterClasesComponent implements OnInit {
     else{
       this._coursesService.registerCourses(this.registerData).subscribe(
         (res) => {
-          this._router.navigate(['/registerTutor']);
+          this._router.navigate(['/principal']);
           this.message = 'Course Added Succesfull';
           this.openSnackBarSuccesfull();
           this.registerData={};

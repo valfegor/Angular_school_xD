@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from "@angular/material/icon";
 import { MatDatepickerModule} from "@angular/material/datepicker";
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 //servicios
 
@@ -68,6 +69,7 @@ import { ClassroomService } from "./services/classroom.service";
     MatSnackBarModule,
     MatIconModule,
     MatDatepickerModule,
+    MatGridListModule
   ],
   providers: [
     EstudentService,
